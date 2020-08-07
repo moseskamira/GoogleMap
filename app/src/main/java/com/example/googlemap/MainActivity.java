@@ -17,9 +17,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
 
-
     private static final int LOCATION_REQUEST_CODE = 10;
-    private static final String API_KEY = "AIzaSyByD-uSiOzUfY92pyqE0QOkCqmV_yQNfgo";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,15 +43,14 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             }
         }
         displayLocation(googleMap);
-
     }
 
     private void displayLocation(GoogleMap map) {
-        LatLng sydney = new LatLng(0, 0);
+        LatLng kampala = new LatLng(0.337, 32.57);
         map.addMarker(new MarkerOptions()
-                .position(sydney))
+                .position(kampala))
                 .setTitle("Marker");
-        map.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        map.moveCamera(CameraUpdateFactory.newLatLng(kampala));
 
     }
 
@@ -63,11 +60,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             case LOCATION_REQUEST_CODE:
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
-                    //                    displayLocation(myGoogleMap);
                 }
-
         }
     }
-
-
 }
