@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         Bundle mapViewBundle = null;
         if (savedInstanceState != null) {
             mapViewBundle = savedInstanceState.getBundle("MapViewBundleKey");
-
         }
         mapView = findViewById(R.id.map_view_id);
         mapView.onCreate(mapViewBundle);
